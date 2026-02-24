@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+venv_build/
+.env
+
+# PyInstaller / Build Artifacts
+build/
+dist/
+*.spec
+build_log.txt
+
+# Output Data
+*.csv
+
+# IDE / System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
