@@ -87,18 +87,37 @@ python scrape_sekolah_kita.py --page-size 1000 --max-pages 5
 - `--output FILE`: Custom output filename.
 - `--tui`: Force interactive mode.
 
-## Building Standalone Executable (Windows)
+## Building Standalone Executable
 
-You can compile the script into a standalone `.exe` file that works on computers without Python.
+You can compile the script into a standalone executable that works on computers without Python installed.
+
+**Note**: PyInstaller compiles for the operating system it is running on. To build a Windows `.exe`, you must run the build script on Windows. To build a macOS binary, you must run it on macOS.
+
+### Windows
 
 1.  Ensure Python is installed on your machine.
-2.  Run `build_exe.bat`.
+2.  Double-click `build_exe.bat`.
 3.  The script will:
-    - Create a virtual environment.
+    - Create a temporary virtual environment.
     - Install necessary packages (`pyinstaller`).
-    - Compile the code.
-4.  The output file `sekolah-kita-scraper.exe` will be in the `dist` folder.
-5.  **Note**: The `.exe` is portable. You can move it anywhere. When run, it saves CSV files in its own directory.
+    - Compile the code into a single `.exe` file.
+4.  The output file `sekolah-kita-scraper.exe` will be located in the `dist` folder.
+
+### macOS / Linux
+
+1.  Open a terminal in the project directory.
+2.  Make the build script executable:
+    ```bash
+    chmod +x build_executable.sh
+    ```
+3.  Run the build script:
+    ```bash
+    ./build_executable.sh
+    ```
+4.  The output binary `sekolah-kita-scraper` will be located in the `dist` folder.
+
+**Portable Usage**:
+The generated executable (`.exe` or binary) is portable. You can move it to any folder on a compatible machine. When run, it will automatically save CSV files in the **same directory** where the executable is located.
 
 ## Output Format
 
