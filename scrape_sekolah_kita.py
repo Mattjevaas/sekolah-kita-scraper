@@ -24,6 +24,7 @@ SAFE_DETAIL_WORKERS_MAX = 4
 MIN_DELAY = 0.5
 MAX_DELAY = 1.5
 DISABLE_RATE_LIMIT = False
+ALLOWED_BENTUK_PENDIDIKAN = "KB,MAK,PAUDQ,RA,SPKTK,SPKPG,SPS,TK,TKLB,TPA"
 
 # Global lock for thread-safe printing
 print_lock = threading.Lock()
@@ -169,7 +170,7 @@ def fetch_page(page: int, size: int, kabupaten_kota: str = "") -> Dict[str, Any]
         "size": size,
         "keyword": "",
         "kabupaten_kota": kabupaten_kota,
-        "bentuk_pendidikan": "",
+        "bentuk_pendidikan": ALLOWED_BENTUK_PENDIDIKAN,
         "status_sekolah": "",
     }
     return post_json(CARI_ENDPOINT, payload)
